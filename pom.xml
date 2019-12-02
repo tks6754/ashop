@@ -12,6 +12,7 @@
         <module>common</module>
         <module>job</module>
         <module>goods</module>
+        <module>market</module>
     </modules>
 
     <properties>
