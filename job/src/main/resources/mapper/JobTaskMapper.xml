@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miao.code.job.dao.JobTaskMapper">
+  <resultMap id="BaseResultMap" type="com.miao.code.job.domain.JobTask">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="job_name" jdbcType="VARCHAR" property="jobName" />
+    <result column="job_group" jdbcType="VARCHAR" property="jobGroup" />
+    <result column="job_class" jdbcType="VARCHAR" property="jobClass" />
+    <result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+    <result column="job_status" jdbcType="TINYINT" property="jobStatus" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  
+  <sql id="base_column_list">
+    id, job_name, job_group, job_class, cron_expression, job_status, description, gmt_create, gmt_modified, is_deleted
+  </sql>
+
+
+  <insert id="saveJobTask" parameterType="JobTask">
+    INSERT INTO job_task
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jobName!=null and jobName!=''">
+        job_name,
+      </if>
+      <if test="jobGroup!=null and jobGroup!=''">
+        job_group,
+      </if>
+      <if test="jobClass!=null and jobClass!=''">
+        job_class,
+      </if>
+      <if test="cronExpression!=null and cronExpression!=''">
+        cron_expression,
+      </if>
+      <if test="jobStatus!=null and jobStatus!=''">
+        job_status,
+      </if>
+      <if test="description!=null and description!=''">
+        description,
+      </if>
+    </trim>
+    VALUES
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jobName!=null and jobName!=''">
+        #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobGroup!=null and jobGroup!=''">
+        #{jobGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="jobClass!=null and jobClass!=''">
+        #{jobClass,jdbcType=VARCHAR},
+      </if>
+      <if test="cronExpression!=null and cronExpression!=''">
+        #{cronExpression,jdbcType=VARCHAR},
+      </if>
+      <if test="jobStatus!=null and jobStatus!=''">
+        #{jobStatus,jdbcType=INTEGER},
+      </if>
+      <if test="description!=null and description!=''">
+        #{description,jdbcType=VARCHAR},
+      </if>
+
+    </trim>
+  </insert>
+
+  <update id="deleteJobTask">
+    UPDATE job_task
+    SET job_status=-1, is_deleted=1
+    WHERE id=#{id,jdbcType=BIGINT} AND is_deleted=0
+  </update>
+
+  <update id="updateJobTask">
+    UPDATE job_task
+    <set>
+      <if test="jobName!=null and jobName!=''">
+        job_name = #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobGroup!=null and jobName!=''">
+        job_group = #{jobGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="jobClass!=null and jobClass!=''">
+        job_class = #{jobClass,jdbcType=VARCHAR},
+      </if>
+      <if test="cronExpression!=null and cronExpression!=''">
+        cron_expression = #{cronExpression,jdbcType=VARCHAR},
+      </if>
+      <if test="jobStatus!=null and jobStatus!=''">
+        job_status = #{jobStatus,jdbcType=INTEGER},
+      </if>
+      <if test="description!=null and description!=''">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      gmt_modified=now()
+    </set>
+    WHERE id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="listJobTask" resultMap="BaseResultMap">
+    SELECT <include refid="base_column_list" />
+    FROM job_task
+    <where>
+      <if test="jobName!=null and jobName!=''">
+        AND job_name LIKE '%#{jobName,jdbcType=VARCHAR}%',
+      </if>
+      <if test="jobClass!=null and jobClass!=''">
+        AND job_class LIKE '%#{jobClass,jdbcType=VARCHAR}%',
+      </if>
+      <if test="jobStatus!=null and jobStatus!=''">
+        AND jobStatus = #{jobStatus,jdbcType=INTEGER},
+      </if>
+      <if test="jobGroup!=null and jobName!=''">
+        AND job_group LIKE '%#{jobGroup,jdbcType=VARCHAR}%',
+      </if>
+        AND is_deleted=0
+    </where>
+  </select>
+
+  <select id="getById" resultMap="BaseResultMap">
+    SELECT <include refid="base_column_list" />
+    FROM job_task
+    WHERE id = #{id,jdbcType=BIGINT} AND is_deleted=0
+  </select>
+
+  <select id="countByClass" parameterType="string" resultType="long">
+    SELECT COUNT(*)
+    FROM job_task
+    WHERE job_class=#{jobClass} AND is_deleted=0
+  </select>
+
+  <select id="countByJobKey" parameterType="string" resultType="long">
+    SELECT COUNT(*)
+    FROM job_task
+    WHERE job_name=#{jobName} AND job_group=#{jobGroup} AND is_deleted=0
+  </select>
+
+</mapper>

@@ -1,0 +1,59 @@
+package com.miao.code.job.dao;
+
+
+import com.miao.code.job.domain.JobTask;
+import com.miao.code.job.domain.qto.JobTaskQTO;
+
+import java.util.List;
+
+public interface JobTaskMapper {
+    /**
+     * 添加任务
+     * @param jobTask
+     * @return
+     */
+    Long saveJobTask(JobTask jobTask);
+
+    /**
+     * 删除任务
+     * @param id
+     * @return
+     */
+    Integer deleteJobTask(Long id);
+
+    /**
+     * 更新任务
+     * @param jobTask
+     * @return
+     */
+    Integer updateJobTask(JobTask jobTask);
+
+    /**
+     * 查询任务
+     * @param jobTaskQTO
+     * @return
+     */
+    List<JobTask> listJobTask(JobTaskQTO jobTaskQTO);
+
+    /**
+     * 获取任务详情
+     * @param id
+     * @return
+     */
+    JobTask getById(Long id);
+
+    /**
+     * 根据任务类 计数
+     * @param jobClass
+     * @return
+     */
+    long countByClass(String jobClass);
+
+    /**
+     * 根据任务name group 计数
+     * @param jobName
+     * @param jobGroup
+     * @return
+     */
+    long countByJobKey(String jobName, String jobGroup);
+}
