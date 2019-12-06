@@ -1,9 +1,9 @@
 package com.miao.code.job.service.impl;
 
 
-import com.miao.code.common.exception.DbException;
-import com.miao.code.common.exception.LogicalException;
-import com.miao.code.common.util.QuartzUtils;
+import com.miao.ashop.common.exception.DbException;
+import com.miao.ashop.common.exception.LogicalException;
+import com.miao.ashop.common.util.QuartzUtils;
 import com.miao.code.job.dao.JobTaskMapper;
 import com.miao.code.job.domain.JobTask;
 import com.miao.code.job.domain.dto.JobTaskDTO;

@@ -1,6 +1,6 @@
 package com.miao.code.job.controller;
 
-import com.miao.code.common.http.GlobalResponse;
+import com.miao.ashop.common.http.GlobalResponse;
 import com.miao.code.job.domain.dto.JobTaskDTO;
 import com.miao.code.job.domain.qto.JobTaskQTO;
 import com.miao.code.job.service.JobTaskService;

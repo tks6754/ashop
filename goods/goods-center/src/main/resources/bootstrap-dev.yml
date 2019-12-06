@@ -1,0 +1,12 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: goods
+
+  cloud:
+    consul:
+      host: 127.0.0.1
+      discovery:
+        service-name: goods-provider
