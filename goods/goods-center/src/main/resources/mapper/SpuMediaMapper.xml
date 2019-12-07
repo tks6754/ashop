@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miao.ashop.goods.dao.SpuMediaMapper">
+  <resultMap id="BaseResultMap" type="com.miao.ashop.goods.domain.SpuMedia">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="spu_id" jdbcType="BIGINT" property="spuId" />
+    <result column="media_url" jdbcType="VARCHAR" property="mediaUrl" />
+    <result column="media_type" jdbcType="TINYINT" property="mediaType" />
+    <result column="img_type" jdbcType="TINYINT" property="imgType" />
+    <result column="seq_num" jdbcType="TINYINT" property="seqNum" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  
+  <sql id="base_column_list">
+    id, spu_id, media_url, media_type, img_type, seq_num, biz_type, version, gmt_create, gmt_modified, is_deleted
+  </sql>
+  
+</mapper>

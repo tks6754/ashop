@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miao.ashop.goods.dao.CategoryMapper">
+  <resultMap id="BaseResultMap" type="com.miao.ashop.goods.domain.Category">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="category_name" jdbcType="VARCHAR" property="categoryName" />
+    <result column="level" jdbcType="TINYINT" property="level" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="cate_type" jdbcType="TINYINT" property="cateType" />
+    <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
+    <result column="back_category" jdbcType="VARCHAR" property="backCategory" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  
+  <sql id="base_column_list">
+    id, category_name, level, parent_id, cate_type, picture_url, back_category, biz_type, version, gmt_create, gmt_modified, is_deleted
+  </sql>
+  
+</mapper>

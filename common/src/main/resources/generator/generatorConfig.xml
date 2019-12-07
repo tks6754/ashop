@@ -66,22 +66,59 @@
 
 
         <!--生成对应表及类名-->
-        <!--<table tableName="user" domainObjectName="User"
-               enableInsert="false"
-               enableSelectByPrimaryKey="false"
-               enableUpdateByPrimaryKey="false"
-               enableDeleteByPrimaryKey="false" />-->
-
-        <!--<table tableName="job_task" domainObjectName="JobTask"
-               enableInsert="false"
-               enableSelectByPrimaryKey="false"
-               enableUpdateByPrimaryKey="false"
-               enableDeleteByPrimaryKey="false" />-->
-        <table tableName="task_record" domainObjectName="TaskRecord"
+        <table tableName="brand" domainObjectName="Brand"
                enableInsert="false"
                enableSelectByPrimaryKey="false"
                enableUpdateByPrimaryKey="false"
                enableDeleteByPrimaryKey="false" />
+        <table tableName="category" domainObjectName="Category"
+               enableInsert="false"
+               enableSelectByPrimaryKey="false"
+               enableUpdateByPrimaryKey="false"
+               enableDeleteByPrimaryKey="false" />
+        <table tableName="category_property" domainObjectName="CategoryProperty"
+               enableInsert="false"
+               enableSelectByPrimaryKey="false"
+               enableUpdateByPrimaryKey="false"
+               enableDeleteByPrimaryKey="false" />
+        <table tableName="item" domainObjectName="Item"
+               enableInsert="false"
+               enableSelectByPrimaryKey="false"
+               enableUpdateByPrimaryKey="false"
+               enableDeleteByPrimaryKey="false" />
+        <table tableName="item_sku" domainObjectName="ItemSku"
+               enableInsert="false"
+               enableSelectByPrimaryKey="false"
+               enableUpdateByPrimaryKey="false"
+               enableDeleteByPrimaryKey="false" />
+        <table tableName="property_group" domainObjectName="PropertyGroup"
+               enableInsert="false"
+               enableSelectByPrimaryKey="false"
+               enableUpdateByPrimaryKey="false"
+               enableDeleteByPrimaryKey="false" />
+        <table tableName="sku_attr_key" domainObjectName="SkuAttrKey"
+               enableInsert="false"
+               enableSelectByPrimaryKey="false"
+               enableUpdateByPrimaryKey="false"
+               enableDeleteByPrimaryKey="false" />
+        <table tableName="sku_attr_val" domainObjectName="SkuAttrVal"
+               enableInsert="false"
+               enableSelectByPrimaryKey="false"
+               enableUpdateByPrimaryKey="false"
+               enableDeleteByPrimaryKey="false" />
+        <table tableName="spu_media" domainObjectName="SpuMedia"
+               enableInsert="false"
+               enableSelectByPrimaryKey="false"
+               enableUpdateByPrimaryKey="false"
+               enableDeleteByPrimaryKey="false" />
+        <table tableName="spu_property" domainObjectName="SpuProperty"
+               enableInsert="false"
+               enableSelectByPrimaryKey="false"
+               enableUpdateByPrimaryKey="false"
+               enableDeleteByPrimaryKey="false" />
+
+
+
 
     </context>
 </generatorConfiguration>

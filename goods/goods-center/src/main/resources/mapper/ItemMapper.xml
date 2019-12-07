@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miao.ashop.goods.dao.ItemMapper">
+  <resultMap id="BaseResultMap" type="com.miao.ashop.goods.domain.Item">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="subtitle" jdbcType="VARCHAR" property="subtitle" />
+    <result column="main_img" jdbcType="VARCHAR" property="mainImg" />
+    <result column="main_video" jdbcType="VARCHAR" property="mainVideo" />
+    <result column="item_code" jdbcType="VARCHAR" property="itemCode" />
+    <result column="market_price" jdbcType="DECIMAL" property="marketPrice" />
+    <result column="cost_price" jdbcType="DECIMAL" property="costPrice" />
+    <result column="sale_price" jdbcType="DECIMAL" property="salePrice" />
+    <result column="brand_id" jdbcType="BIGINT" property="brandId" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+    <result column="category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="category_name" jdbcType="VARCHAR" property="categoryName" />
+    <result column="shop_id" jdbcType="BIGINT" property="shopId" />
+    <result column="item_pattern" jdbcType="TINYINT" property="itemPattern" />
+    <result column="item_type" jdbcType="TINYINT" property="itemType" />
+    <result column="flag" jdbcType="BIGINT" property="flag" />
+    <result column="feature" jdbcType="VARCHAR" property="feature" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  
+  <sql id="base_column_list">
+    id, name, subtitle, main_img, main_video, item_code, market_price, cost_price, sale_price, brand_id, brand_name, category_id, category_name, shop_id, item_pattern, item_type, flag, feature, biz_type, version, gmt_create, gmt_modified, is_deleted
+  </sql>
+  
+</mapper>

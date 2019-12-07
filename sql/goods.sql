@@ -176,7 +176,7 @@ DROP TABLE IF EXISTS `sku_attr_val`;
 CREATE TABLE `sku_attr_val` (
 `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 `spu_id` bigint(11) NOT NULL COMMENT 'spu id',
-'attr_id' bigint(11) NOT NULL COMMENT 'sku属性id',
+`attr_key_id` bigint(11) NOT NULL COMMENT 'sku属性id',
 `attr_value` varchar(64) DEFAULT NULL COMMENT '属性名',
 
 `biz_type` varchar(8) NOT NULL COMMENT '所属业务平台',
@@ -189,7 +189,7 @@ PRIMARY KEY (`id`)
 
 
 
-DROP TABLE IF EXISTS `sku`;
+DROP TABLE IF EXISTS `item_sku`;
 CREATE TABLE `item_sku` (
 `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 `sku_name` varchar(64) NOT NULL COMMENT 'sku名',

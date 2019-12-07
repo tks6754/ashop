@@ -13,8 +13,9 @@ import org.mybatis.generator.codegen.mybatis3.MyBatis3FormattingUtilities;
 import org.mybatis.generator.config.Context;
 import org.mybatis.generator.internal.util.StringUtility;
 
-import java.util.List;
-import java.util.Properties;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.*;
 
 
 public class BasePlugin extends PluginAdapter {
@@ -249,6 +250,69 @@ public class BasePlugin extends PluginAdapter {
         field.addJavaDocLine(sb.toString());
         field.addJavaDocLine(" */");
         // 生成注释结束
+    }
+
+
+    /**
+     * 类注释生成
+     * @param topLevelClass
+     * @param explain
+     */
+    public static void classAnnotation(TopLevelClass topLevelClass, String explain) {
+        // 生成注释
+        topLevelClass.addJavaDocLine("/**");
+        topLevelClass.addJavaDocLine("* " + topLevelClass.getType().getShortName());
+        topLevelClass.addJavaDocLine("*");
+        topLevelClass.addJavaDocLine("* @author miao");
+        topLevelClass.addJavaDocLine("* @created " + LocalDateTime.now().toString());
+        topLevelClass.addJavaDocLine("*/");
+        // 生成注释结束
+    }
+
+    /**
+     * 修改实体类
+     * @param topLevelClass
+     * @param introspectedTable
+     * @return
+     */
+    public boolean modelBaseRecordClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+        classAnnotation(topLevelClass,null);
+        Set<FullyQualifiedJavaType> set = new HashSet<FullyQualifiedJavaType>();
+        set.add(new FullyQualifiedJavaType("lombok.Data"));
+        topLevelClass.addImportedTypes(set);
+        topLevelClass.addAnnotation("@Data");
+        return super.modelBaseRecordClassGenerated(topLevelClass, introspectedTable);
+    }
+
+
+
+
+    /**
+     * 接口注释生成
+     * @param interfaze
+     * @param explain
+     */
+    public static void interfazeAnnotation(Interface interfaze, String explain) {
+        // 生成注释
+        interfaze.addJavaDocLine("/**");
+        interfaze.addJavaDocLine("* " + interfaze.getType().getShortName());
+        interfaze.addJavaDocLine("*");
+        interfaze.addJavaDocLine("* @author miao");
+        interfaze.addJavaDocLine("* @created " + LocalDateTime.now().toString());
+        interfaze.addJavaDocLine("*/");
+        // 生成注释结束
+    }
+
+    /**
+     * 修改mapper接口
+     * @param interfaze
+     * @param topLevelClass
+     * @param introspectedTable
+     * @return
+     */
+    public boolean clientGenerated(Interface interfaze, TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+        interfazeAnnotation(interfaze, null);
+        return super.clientGenerated(interfaze,topLevelClass,introspectedTable);
     }
 
 
