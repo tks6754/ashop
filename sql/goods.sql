@@ -20,8 +20,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 -- Table structure for user
 -- ----------------------------
-DROP TABLE IF EXISTS `product`;
-CREATE TABLE `product` (
+DROP TABLE IF EXISTS `item`;
+CREATE TABLE `item` (
 `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 `name` varchar(128) NOT NULL COMMENT '名称',
 `subtitle` varchar(128) NOT NULL COMMENT '副标题',
@@ -47,7 +47,8 @@ CREATE TABLE `product` (
 `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
 `is_deleted` tinyint(2) DEFAULT 0 COMMENT '逻辑删除 0:未删除 1:已删除',
 PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='spu';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='item';
+
 
 
 DROP TABLE IF EXISTS `category`;
@@ -69,12 +70,14 @@ PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='类目';
 
 
+
 DROP TABLE IF EXISTS `category_property`;
 CREATE TABLE `category_property` (
 `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 `category_id` bigint(11) UNSIGNED NOT NULL COMMENT '类目id',
 `property_name` varchar(64) NOT NULL COMMENT '属性名',
-`prop_type` tinyint(2) NOT NULL COMMENT '属性类型 1:spu-property 2:sku-property',
+`prop_type` tinyint(2) NOT NULL COMMENT '属性类型 1:spu-property 2:spu规格 3:sku-property',
+`prop_group` bigint(11) DEFAULT NULL COMMENT 'prop_type=2时，spu规格的分组',
 
 `biz_type` varchar(8) NOT NULL COMMENT '所属业务平台',
 `version` int(10) NOT NULL DEFAULT 0 COMMENT '版本',
@@ -83,6 +86,22 @@ CREATE TABLE `category_property` (
 `is_deleted` tinyint(2) DEFAULT 0 COMMENT '逻辑删除 0:未删除 1:已删除',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='类目下属性';
+
+
+
+DROP TABLE IF EXISTS `property_group`;
+CREATE TABLE `property_group` (
+ `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+ `prop_group_name` varchar(64) NOT NULL COMMENT '属性名',
+
+ `biz_type` varchar(8) NOT NULL COMMENT '所属业务平台',
+ `version` int(10) NOT NULL DEFAULT 0 COMMENT '版本',
+ `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+ `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+ `is_deleted` tinyint(2) DEFAULT 0 COMMENT '逻辑删除 0:未删除 1:已删除',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='属性分组';
+
 
 
 DROP TABLE IF EXISTS `spu_property`;
@@ -101,6 +120,7 @@ CREATE TABLE `spu_property` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='spu属性';
 
 
+
 DROP TABLE IF EXISTS `brand`;
 CREATE TABLE `brand` (
 `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -114,6 +134,7 @@ CREATE TABLE `brand` (
 `is_deleted` tinyint(2) DEFAULT 0 COMMENT '逻辑删除 0:未删除 1:已删除',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='品牌';
+
 
 
 DROP TABLE IF EXISTS `spu_media`;
@@ -134,6 +155,7 @@ CREATE TABLE `spu_media` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品图片';
 
 
+
 DROP TABLE IF EXISTS `sku_attr_key`;
 CREATE TABLE `sku_attr_key` (
 `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -147,6 +169,8 @@ CREATE TABLE `sku_attr_key` (
 `is_deleted` tinyint(2) DEFAULT 0 COMMENT '逻辑删除 0:未删除 1:已删除',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='sku属性';
+
+
 
 DROP TABLE IF EXISTS `sku_attr_val`;
 CREATE TABLE `sku_attr_val` (
@@ -163,13 +187,16 @@ CREATE TABLE `sku_attr_val` (
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='sku属性值';
 
-DROP TABLE IF EXISTS `item_sku`;
+
+
+DROP TABLE IF EXISTS `sku`;
 CREATE TABLE `item_sku` (
 `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 `sku_name` varchar(64) NOT NULL COMMENT 'sku名',
 `sku_attr_code` varchar(32) NOT NULL COMMENT 'sku属性code唯一码 十进制占位表示',
 `sku_img` varchar(255) DEFAULT NULL COMMENT 'sku图',
 `qty` int(8) NOT NULL DEFAULT 0 COMMENT '库存数',
+`market_price` decimal(16,4) NOT NULL COMMENT '市场价',
 `sale_price` decimal(16,4) NOT NULL DEFAULT 0 COMMENT '售价',
 `cost_price` decimal(16,4) NOT NULL DEFAULT 0 COMMENT '成本价',
 
