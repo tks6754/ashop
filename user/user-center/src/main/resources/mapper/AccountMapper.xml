@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miao.ashop.user.dao.AccountMapper">
+  <resultMap id="BaseResultMap" type="com.miao.ashop.user.domain.Account">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="create_ip_at" jdbcType="VARCHAR" property="createIpAt" />
+    <result column="last_login_at" jdbcType="TIMESTAMP" property="lastLoginAt" />
+    <result column="last_login_ip_at" jdbcType="VARCHAR" property="lastLoginIpAt" />
+    <result column="login_times" jdbcType="INTEGER" property="loginTimes" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  
+  <sql id="base_column_list">
+    id, email, phone, username, password, create_ip_at, last_login_at, last_login_ip_at, login_times, biz_type, version, gmt_create, gmt_modified, is_deleted
+  </sql>
+  
+</mapper>

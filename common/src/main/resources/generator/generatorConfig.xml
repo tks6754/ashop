@@ -66,58 +66,46 @@
 
 
         <!--生成对应表及类名-->
-        <table tableName="brand" domainObjectName="Brand"
+        <table tableName="account" domainObjectName="Account"
                enableInsert="false"
                enableSelectByPrimaryKey="false"
                enableUpdateByPrimaryKey="false"
                enableDeleteByPrimaryKey="false" />
-        <table tableName="category" domainObjectName="Category"
+        <table tableName="platform_account" domainObjectName="PlatformAccount"
                enableInsert="false"
                enableSelectByPrimaryKey="false"
                enableUpdateByPrimaryKey="false"
                enableDeleteByPrimaryKey="false" />
-        <table tableName="category_property" domainObjectName="CategoryProperty"
+        <table tableName="account_user" domainObjectName="AccountUser"
                enableInsert="false"
                enableSelectByPrimaryKey="false"
                enableUpdateByPrimaryKey="false"
                enableDeleteByPrimaryKey="false" />
-        <table tableName="item" domainObjectName="Item"
+        <table tableName="staff" domainObjectName="Staff"
                enableInsert="false"
                enableSelectByPrimaryKey="false"
                enableUpdateByPrimaryKey="false"
                enableDeleteByPrimaryKey="false" />
-        <table tableName="item_sku" domainObjectName="ItemSku"
+        <table tableName="auth_menu" domainObjectName="AuthMenu"
                enableInsert="false"
                enableSelectByPrimaryKey="false"
                enableUpdateByPrimaryKey="false"
                enableDeleteByPrimaryKey="false" />
-        <table tableName="property_group" domainObjectName="PropertyGroup"
+        <table tableName="auth_item" domainObjectName="AuthItem"
                enableInsert="false"
                enableSelectByPrimaryKey="false"
                enableUpdateByPrimaryKey="false"
                enableDeleteByPrimaryKey="false" />
-        <table tableName="sku_attr_key" domainObjectName="SkuAttrKey"
+        <table tableName="auth_role" domainObjectName="AuthRole"
                enableInsert="false"
                enableSelectByPrimaryKey="false"
                enableUpdateByPrimaryKey="false"
                enableDeleteByPrimaryKey="false" />
-        <table tableName="sku_attr_val" domainObjectName="SkuAttrVal"
+        <table tableName="auth_role_staff" domainObjectName="AuthRoleStaff"
                enableInsert="false"
                enableSelectByPrimaryKey="false"
                enableUpdateByPrimaryKey="false"
                enableDeleteByPrimaryKey="false" />
-        <table tableName="spu_media" domainObjectName="SpuMedia"
-               enableInsert="false"
-               enableSelectByPrimaryKey="false"
-               enableUpdateByPrimaryKey="false"
-               enableDeleteByPrimaryKey="false" />
-        <table tableName="spu_property" domainObjectName="SpuProperty"
-               enableInsert="false"
-               enableSelectByPrimaryKey="false"
-               enableUpdateByPrimaryKey="false"
-               enableDeleteByPrimaryKey="false" />
-
-
 
 
     </context>
