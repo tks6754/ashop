@@ -4,7 +4,7 @@ import java.util.Date;
 import lombok.Data;
 
 /**
-* Account
+* Account 账户
 *
 * @author miao
 * @created 2019-12-10T22:27:51.946

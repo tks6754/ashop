@@ -4,7 +4,7 @@ import java.util.Date;
 import lombok.Data;
 
 /**
-* AuthRole
+* AuthRole 角色
 *
 * @author miao
 * @created 2019-12-10T22:27:51.955

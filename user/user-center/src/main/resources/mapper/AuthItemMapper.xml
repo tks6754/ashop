@@ -16,5 +16,13 @@
   <sql id="base_column_list">
     id, menu_id, req_url, req_method, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
+
+  <insert id="saveAuthItem" parameterType="AuthItem">
+
+  </insert>
+
+  <update id="deleteAuthItem" parameterType="long">
+
+  </update>
   
 </mapper>

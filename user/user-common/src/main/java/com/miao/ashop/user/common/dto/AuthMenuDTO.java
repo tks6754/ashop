@@ -1,20 +1,14 @@
-package com.miao.ashop.user.domain;
+package com.miao.ashop.user.common.dto;
 
-import java.util.Date;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
 
-/**
-* AuthMenu 页面权限
-*
-* @author miao
-* @created 2019-12-10T22:27:51.954
-*/
+import java.util.List;
+
 @Data
-@Alias("AuthMenu")
-public class AuthMenu {
+public class AuthMenuDTO {
+
     /**
-     * 
+     *
      */
     private Long id;
 
@@ -54,17 +48,8 @@ public class AuthMenu {
     private Integer version;
 
     /**
-     * 创建时间
+     * 页面授权接口
      */
-    private Date gmtCreate;
+    List<AuthItemDTO> authItemDTOList;
 
-    /**
-     * 更新时间
-     */
-    private Date gmtModified;
-
-    /**
-     * 逻辑删除 0:未删除 1:已删除
-     */
-    private Integer isDeleted;
 }

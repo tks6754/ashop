@@ -18,5 +18,22 @@
   <sql id="base_column_list">
     id, parent_id, menu_name, menu_desc, menu_uri, is_show, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+
+  <insert id="addAuthMenu" parameterType="AuthMenu">
+
+  </insert>
+
+  <update id="deleteMenu" parameterType="long">
+
+  </update>
+
+  <update id="updateMenu" parameterType="AuthMenu">
+
+  </update>
+
+  <select id="listAllMenu" resultMap="BaseResultMap">
+
+  </select>
+
 </mapper>

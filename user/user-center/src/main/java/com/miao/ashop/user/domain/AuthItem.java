@@ -2,13 +2,15 @@ package com.miao.ashop.user.domain;
 
 import java.util.Date;
 import lombok.Data;
+import org.apache.ibatis.type.Alias;
 
 /**
-* AuthItem
+* AuthItem 接口权限
 *
 * @author miao
 * @created 2019-12-10T22:27:51.954
 */
+@Alias("AuthItem")
 @Data
 public class AuthItem {
     /**
