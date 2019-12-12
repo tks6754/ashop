@@ -36,6 +36,7 @@ public class AuthMenuServiceImpl implements AuthMenuService {
         if (authMenuDTO.getAuthItemDTOList()!=null && authMenuDTO.getAuthItemDTOList().size()>0){
             for (AuthItemDTO authItemDTO : authMenuDTO.getAuthItemDTOList()) {
                 authItemDTO.setMenuId(menuId);
+                authItemService.addAuthItem(authItemDTO);
             }
         }
 
@@ -45,6 +46,22 @@ public class AuthMenuServiceImpl implements AuthMenuService {
     @Override
     public int deleteMenu(Long id) {
         return 0;
+    }
+
+    @Override
+    @Transactional
+    public int updateMenu(AuthMenuDTO authMenuDTO) {
+        AuthMenu authMenu = new AuthMenu();
+        BeanUtils.copyProperties(authMenuDTO, authMenu);
+        int ret = authMenuMapper.updateMenu(authMenu);
+
+        if (authMenuDTO.getAuthItemDTOList()!=null && authMenuDTO.getAuthItemDTOList().size()>0){
+            for (AuthItemDTO authItemDTO : authMenuDTO.getAuthItemDTOList()) {
+                authItemDTO.setMenuId(authMenu.getId());
+                authItemService.updateAuthItem(authItemDTO);
+            }
+        }
+        return ret;
     }
 
     @Override

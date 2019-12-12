@@ -24,4 +24,11 @@ public interface AuthItemMapper {
      */
     int deleteAuthItem(Long id);
 
+    /**
+     *
+     * @param authItem
+     * @return
+     */
+    int updateById(AuthItem authItem);
+
 }

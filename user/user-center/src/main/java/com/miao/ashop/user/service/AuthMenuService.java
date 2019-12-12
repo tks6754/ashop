@@ -14,14 +14,21 @@ public interface AuthMenuService {
     Long addMenu(AuthMenuDTO authMenuDTO);
 
     /**
-     *
+     * 删除授权页
      * @param id
      * @return
      */
     int deleteMenu(Long id);
 
     /**
-     *
+     * 更新授权页
+     * @param authMenuDTO
+     * @return
+     */
+    int updateMenu(AuthMenuDTO authMenuDTO);
+
+    /**
+     * 所有授权页
      * @return
      */
     List<AuthMenuDTO> allAuth();

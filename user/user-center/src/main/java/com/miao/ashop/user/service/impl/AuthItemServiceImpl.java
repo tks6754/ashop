@@ -39,6 +39,18 @@ public class AuthItemServiceImpl implements AuthItemService {
         return authItemMapper.deleteAuthItem(id);
     }
 
+    @Override
+    public void updateAuthItem(AuthItemDTO authItemDTO) {
+        if (null == authItemDTO.getId()){
+            addAuthItem(authItemDTO);
+        }else {
+            AuthItem authItem = new AuthItem();
+            BeanUtils.copyProperties(authItemDTO, authItem);
+            authItemMapper.updateById(authItem);
+        }
+
+    }
+
 
     @Override
     public List<AuthItemDTO> listAllAuthItem() {

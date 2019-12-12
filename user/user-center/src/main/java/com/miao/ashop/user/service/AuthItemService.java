@@ -26,6 +26,13 @@ public interface AuthItemService {
      */
     int deleteAuthItem(long id);
 
+    /**
+     *
+     * @param authItemDTO
+     * @return
+     */
+    void updateAuthItem(AuthItemDTO authItemDTO);
+
 
     /**
      *
