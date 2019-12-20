@@ -140,9 +140,9 @@ PRIMARY KEY (`id`)
 DROP TABLE IF EXISTS `auth_role`;
 CREATE TABLE `auth_role` (
 `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增id',
-`name` varchar(255) NOT NULL DEFAULT '0' COMMENT '角色名称',
-`desc` varchar(255) NOT NULL DEFAULT '0' COMMENT '角描述',
-`auth_set` text COMMENT '权限集合 多个值,号隔开',
+`role_name` varchar(255) NOT NULL DEFAULT '0' COMMENT '角色名称',
+`role_desc` varchar(255) NOT NULL DEFAULT '0' COMMENT '角描述',
+`auth_set` varchar(255) COMMENT '权限集合 多个值,号隔开',
 
 `biz_type` varchar(8) NOT NULL COMMENT '所属业务平台',
 `version` int(10) NOT NULL DEFAULT 0 COMMENT '版本',

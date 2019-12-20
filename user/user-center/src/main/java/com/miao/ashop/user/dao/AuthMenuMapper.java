@@ -26,7 +26,15 @@ public interface AuthMenuMapper {
     int updateMenu(AuthMenu authMenu);
 
 
+
     List<AuthMenu> listAllMenu();
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    AuthMenu getById(Long id);
 
 
 }

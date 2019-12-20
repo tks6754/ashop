@@ -25,8 +25,15 @@
 
   </update>
 
-
-  <update id="updateById">
+  <update id="deleteByMenu" parameterType="long">
 
   </update>
+
+  <update id="updateById" parameterType="long">
+
+  </update>
+
+  <select id="listByMenu" resultMap="BaseResultMap">
+
+  </select>
 </mapper>

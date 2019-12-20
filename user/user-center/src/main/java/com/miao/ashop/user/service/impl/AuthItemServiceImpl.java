@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -40,6 +41,11 @@ public class AuthItemServiceImpl implements AuthItemService {
     }
 
     @Override
+    public int deleteAuthByMenu(Long menuId) {
+        return authItemMapper.deleteByMenu(menuId);
+    }
+
+    @Override
     public void updateAuthItem(AuthItemDTO authItemDTO) {
         if (null == authItemDTO.getId()){
             addAuthItem(authItemDTO);
@@ -51,9 +57,24 @@ public class AuthItemServiceImpl implements AuthItemService {
 
     }
 
-
     @Override
     public List<AuthItemDTO> listAllAuthItem() {
         return null;
+    }
+
+
+    @Override
+    public List<AuthItemDTO> listAuthItemByMenu(Long menuId) {
+        List<AuthItemDTO> authItemDTOList = new ArrayList<>();
+
+        List<AuthItem> authItemList = authItemMapper.listByMenu(menuId);
+        if (authItemList!=null && authItemList.size()>0){
+            for (AuthItem authItem : authItemList) {
+                AuthItemDTO authItemDTO = new AuthItemDTO();
+                BeanUtils.copyProperties(authItem, authItemDTO);
+                authItemDTOList.add(authItemDTO);
+            }
+        }
+        return authItemDTOList;
     }
 }

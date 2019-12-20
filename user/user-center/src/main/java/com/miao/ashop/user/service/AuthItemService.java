@@ -26,6 +26,8 @@ public interface AuthItemService {
      */
     int deleteAuthItem(long id);
 
+    int deleteAuthByMenu(Long menuId);
+
     /**
      *
      * @param authItemDTO
@@ -39,5 +41,14 @@ public interface AuthItemService {
      * @return
      */
     List<AuthItemDTO> listAllAuthItem();
+
+    /**
+     *
+     * @return
+     */
+    List<AuthItemDTO> listAuthItemByMenu(Long menuId);
+
+
+
 
 }

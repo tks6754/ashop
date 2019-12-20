@@ -44,8 +44,10 @@ public class AuthMenuServiceImpl implements AuthMenuService {
     }
 
     @Override
+    @Transactional
     public int deleteMenu(Long id) {
-        return 0;
+        authItemService.deleteAuthByMenu(id);
+        return authMenuMapper.deleteMenu(id);
     }
 
     @Override
@@ -95,6 +97,17 @@ public class AuthMenuServiceImpl implements AuthMenuService {
 
     @Override
     public AuthMenuDTO getAuthMenu(Long id) {
+        AuthMenuDTO authMenuDTO = new AuthMenuDTO();
+        AuthMenu authMenu = authMenuMapper.getById(id);
+        BeanUtils.copyProperties(authMenu, authMenuDTO);
+        List<AuthItemDTO> authItemDTOList = authItemService.listAuthItemByMenu(id);
+        authMenuDTO.setAuthItemDTOList(authItemDTOList);
+
+        return authMenuDTO;
+    }
+
+    @Override
+    public List<AuthMenuDTO> listMenuByIdList(List<Long> idList) {
         return null;
     }
 }

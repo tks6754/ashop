@@ -40,6 +40,13 @@ public interface AuthMenuService {
      */
     AuthMenuDTO getAuthMenu(Long id);
 
+    /**
+     * 获取
+     * @param idList
+     * @return
+     */
+    List<AuthMenuDTO> listMenuByIdList(List<Long> idList);
+
 
 
 }

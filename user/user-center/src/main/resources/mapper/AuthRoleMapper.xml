@@ -3,18 +3,30 @@
 <mapper namespace="com.miao.ashop.user.dao.AuthRoleMapper">
   <resultMap id="BaseResultMap" type="com.miao.ashop.user.domain.AuthRole">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_desc" jdbcType="VARCHAR" property="roleDesc" />
+    <result column="auth_set" jdbcType="VARCHAR" property="authSet" />
     <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
     <result column="version" jdbcType="INTEGER" property="version" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
     <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
-    <result column="auth_set" jdbcType="LONGVARCHAR" property="authSet" />
   </resultMap>
   
   <sql id="base_column_list">
-    id, name, desc, biz_type, version, gmt_create, gmt_modified, is_deleted, auth_set
+    id, role_name, role_desc, auth_set, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
+
+  <insert id="saveRole">
+
+  </insert>
+
+  <update id="deleteRole" parameterType="long">
+
+  </update>
+
+  <select id="getById" parameterType="long" resultMap="BaseResultMap">
+
+  </select>
   
 </mapper>

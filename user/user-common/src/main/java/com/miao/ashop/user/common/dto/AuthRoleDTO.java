@@ -1,16 +1,13 @@
-package com.miao.ashop.user.domain;
+package com.miao.ashop.user.common.dto;
 
-import java.util.Date;
 import lombok.Data;
 
-/**
-* AuthRole 角色
-*
-* @author miao
-* @created 2019-12-10T22:27:51.955
-*/
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
 @Data
-public class AuthRole {
+public class AuthRoleDTO implements Serializable {
     /**
      * 自增id
      */
@@ -42,18 +39,9 @@ public class AuthRole {
     private Integer version;
 
     /**
-     * 创建时间
+     * 页面集合
      */
-    private Date gmtCreate;
+    private List<AuthMenuDTO> authMenuDTOList;
 
-    /**
-     * 更新时间
-     */
-    private Date gmtModified;
-
-    /**
-     * 逻辑删除 0:未删除 1:已删除
-     */
-    private Integer isDeleted;
 
 }
