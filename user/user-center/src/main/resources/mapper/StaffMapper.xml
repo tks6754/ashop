@@ -20,5 +20,20 @@
   <sql id="base_column_list">
     id, uid, email, phone, name, nickname, avatar, gender, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+  <insert id="saveStaff" parameterType="Staff">
+
+  </insert>
+
+  <update id="deleteStaff" parameterType="long">
+
+  </update>
+
+  <update id="updateStaff" parameterType="Staff">
+
+  </update>
+
+  <select id="getById" parameterType="long" resultMap="BaseResultMap">
+
+  </select>
 </mapper>

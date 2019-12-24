@@ -1,21 +1,11 @@
-package com.miao.ashop.user.domain;
+package com.miao.ashop.user.common.dto;
 
-import java.util.Date;
-import lombok.Data;
-import org.apache.ibatis.type.Alias;
+import java.io.Serializable;
 
-/**
-* Staff 员工
-*
-* @author miao
-* @created 2019-12-10T22:27:51.953
-*/
+public class StaffDTO implements Serializable {
 
-@Alias("Staff")
-@Data
-public class Staff {
     /**
-     * 
+     *
      */
     private Long id;
 
@@ -64,18 +54,4 @@ public class Staff {
      */
     private Integer version;
 
-    /**
-     * 创建时间
-     */
-    private Date gmtCreate;
-
-    /**
-     * 更新时间
-     */
-    private Date gmtModified;
-
-    /**
-     * 逻辑删除 0:未删除 1:已删除
-     */
-    private Integer isDeleted;
 }

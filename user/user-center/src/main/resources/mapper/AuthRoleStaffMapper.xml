@@ -17,5 +17,12 @@
   <sql id="base_column_list">
     id, staff_id, role_set, create_by, update_by, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+  <insert id="saveAuthRoleStaff" parameterType="AuthRoleStaff">
+
+  </insert>
+
+  <update id="updateAuthRoleStaff" parameterType="AuthRoleStaff">
+
+  </update>
 </mapper>

@@ -3,7 +3,6 @@ package com.miao.ashop.user.common.dto;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -24,7 +23,7 @@ public class AuthRoleDTO implements Serializable {
     private String roleDesc;
 
     /**
-     * 权限集合 多个值,号隔开
+     * (接口)权限集合 多个值,号隔开
      */
     private String authSet;
 
@@ -39,9 +38,13 @@ public class AuthRoleDTO implements Serializable {
     private Integer version;
 
     /**
-     * 页面集合
+     * 页面集合 (内部解析接口集合)
      */
     private List<AuthMenuDTO> authMenuDTOList;
 
+    /**
+     * 接口集合
+     */
+    private List<AuthItemDTO> authItemDTOList;
 
 }

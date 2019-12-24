@@ -21,5 +21,20 @@
   <sql id="base_column_list">
     id, email, phone, username, password, create_ip_at, last_login_at, last_login_ip_at, login_times, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+  <insert id="saveAccount" parameterType="Account">
+
+  </insert>
+
+  <update id="deleteAccount" parameterType="long">
+
+  </update>
+
+  <update id="updateAccount" parameterType="Account">
+
+  </update>
+
+  <select id="getById" parameterType="long" resultMap="BaseResultMap">
+
+  </select>
 </mapper>
