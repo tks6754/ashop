@@ -28,5 +28,9 @@
   <select id="getById" parameterType="long" resultMap="BaseResultMap">
 
   </select>
+
+  <select id="listAllRole" resultMap="BaseResultMap">
+
+  </select>
   
 </mapper>

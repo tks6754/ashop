@@ -14,6 +14,7 @@
     <modules>
         <module>user-center</module>
         <module>user-common</module>
+        <module>user-api</module>
     </modules>
 
 

@@ -2,6 +2,8 @@ package com.miao.ashop.user.dao;
 
 import com.miao.ashop.user.domain.AuthRole;
 
+import java.util.List;
+
 /**
 * AuthRoleMapper
 *
@@ -31,5 +33,10 @@ public interface AuthRoleMapper {
      */
     AuthRole getById(Long id);
 
+    /**
+     * 获取所有角色
+     * @return
+     */
+    List<AuthRole> listAllRole();
 
 }

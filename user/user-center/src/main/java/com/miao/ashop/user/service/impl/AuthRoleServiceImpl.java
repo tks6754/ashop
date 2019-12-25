@@ -57,7 +57,17 @@ public class AuthRoleServiceImpl implements AuthRoleService {
 
     @Override
     public List<AuthRoleDTO> listAllRole() {
-        return null;
+        List<AuthRoleDTO> authRoleDTOList = new ArrayList<>();
+        List<AuthRole> authRoleList = authRoleMapper.listAllRole();
+        if (authRoleList!=null && authRoleList.size()>0){
+            for (AuthRole authRole : authRoleList) {
+                AuthRoleDTO authRoleDTO = new AuthRoleDTO();
+                BeanUtils.copyProperties(authRole, authRoleDTO);
+                authRoleDTOList.add(authRoleDTO);
+            }
+        }
+
+        return authRoleDTOList;
     }
 
 
