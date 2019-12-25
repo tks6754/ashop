@@ -34,6 +34,8 @@
   </update>
 
   <select id="getById" parameterType="long" resultMap="BaseResultMap">
-
+    SELECT <include refid="base_column_list" />
+    FROM staff
+    WHERE id=#{id} AND is_deleted=0
   </select>
 </mapper>

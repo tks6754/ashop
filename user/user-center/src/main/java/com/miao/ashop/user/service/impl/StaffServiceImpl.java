@@ -1,5 +1,6 @@
 package com.miao.ashop.user.service.impl;
 
+import com.miao.ashop.common.exception.DbException;
 import com.miao.ashop.user.common.dto.StaffDTO;
 import com.miao.ashop.user.dao.StaffMapper;
 import com.miao.ashop.user.domain.Staff;
@@ -39,6 +40,9 @@ public class StaffServiceImpl implements StaffService {
     public StaffDTO getStaff(Long id) {
         StaffDTO staffDTO = new StaffDTO();
         Staff staff = staffMapper.getById(id);
+        if (null==staff){
+            throw new DbException.DbNotExistException("staff.id="+ id);
+        }
         BeanUtils.copyProperties(staff, staffDTO);
 
         return staffDTO;

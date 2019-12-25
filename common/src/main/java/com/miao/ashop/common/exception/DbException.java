@@ -10,6 +10,9 @@ public class DbException {
         public DbNotExistException(){
             super(ErrorEnum.DB_NOT_EXIST, null);
         }
+        public DbNotExistException(String errMsg){
+            super(ErrorEnum.DB_NOT_EXIST.errCode(), errMsg + ErrorEnum.DB_NOT_EXIST.errorMsg());
+        }
     }
 
 }

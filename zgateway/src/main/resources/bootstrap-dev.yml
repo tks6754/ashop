@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    consul:
+      host: 127.0.0.1
+      discovery:
+        service-name: gate-center
+
+server:
+  port: 1111

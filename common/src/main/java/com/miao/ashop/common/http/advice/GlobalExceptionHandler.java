@@ -2,6 +2,7 @@ package com.miao.ashop.common.http.advice;
 
 
 import com.miao.ashop.common.exception.BaseException;
+import com.miao.ashop.common.exception.DbException;
 import com.miao.ashop.common.exception.ErrorEnum;
 import com.miao.ashop.common.http.GlobalResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -37,6 +38,22 @@ public class GlobalExceptionHandler {
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         BaseException exception = (BaseException) e;
         log.error("服务异常, 错误码:[{}], 错误信息:[{}]", exception.getErrCode(), exception.getErrorMsg(), e);
+        return GlobalResponse.fail(exception.getErrCode(), exception.getErrorMsg());
+    }
+
+    /**
+     * 自定义异常 捕获
+     *
+     * @param request  request
+     * @param e        exception
+     * @param response response
+     * @return 响应结果
+     */
+    @ExceptionHandler(DbException.DbNotExistException.class)
+    public GlobalResponse dbNotExistExceptionHandler(HttpServletRequest request, final Exception e, HttpServletResponse response) {
+        response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        BaseException exception = (BaseException) e;
+        log.error("查询记录不存在, 错误码:[{}], 错误信息:[{}]", exception.getErrCode(), exception.getErrorMsg(), e);
         return GlobalResponse.fail(exception.getErrCode(), exception.getErrorMsg());
     }
 
