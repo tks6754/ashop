@@ -13,7 +13,7 @@ spring:
         - id: user_route
           uri: lb://user-center
           predicates:
-            - Path=/user
+            - Path=/user/**
           filters:
             - SwaggerHeaderFilter
             - StripPrefix=1
