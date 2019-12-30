@@ -17,7 +17,7 @@ public class PropertyGroup {
     private Long id;
 
     /**
-     * 属性名
+     * 属性组名
      */
     private String propGroupName;
 

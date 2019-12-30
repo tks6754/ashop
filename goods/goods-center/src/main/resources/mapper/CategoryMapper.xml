@@ -19,5 +19,28 @@
   <sql id="base_column_list">
     id, category_name, level, parent_id, cate_type, picture_url, back_category, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+  <insert id="saveCategory" >
+
+  </insert>
+
+  <update id="deleteCategory" parameterType="long">
+
+  </update>
+
+  <update id="updateCategory" parameterType="Category">
+
+  </update>
+
+  <select id="getById" parameterType="long" resultMap="BaseResultMap">
+
+  </select>
+
+  <select id="listCategory" parameterType="com.miao.ashop.goods.common.qto.CategoryQTO" resultMap="BaseResultMap">
+
+  </select>
+
+  <select id="countCategory" parameterType="com.miao.ashop.goods.common.qto.CategoryQTO" resultType="long">
+
+  </select>
 </mapper>
