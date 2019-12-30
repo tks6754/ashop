@@ -30,7 +30,7 @@ public class BrandServiceImpl implements BrandService {
     public int deleteBrand(Long id) {
         int ret = brandMapper.deleteBrand(id);
         if (0==ret){
-            throw new DbException.DbNotExistException("brandId="+ id);
+            throw new DbException.DbNotExistException("brand.id="+ id);
         }
 
         return ret;
@@ -42,7 +42,7 @@ public class BrandServiceImpl implements BrandService {
         BeanUtils.copyProperties(brandDTO, brand);
         int ret = brandMapper.updateBrand(brand);
         if (null==brand){
-            throw new DbException.DbNotExistException("brandId="+ brandDTO.getId());
+            throw new DbException.DbNotExistException("brand.id="+ brandDTO.getId());
         }
         return ret;
     }
@@ -52,7 +52,7 @@ public class BrandServiceImpl implements BrandService {
         BrandDTO brandDTO = BrandDTO.builder().build();
         Brand brand = brandMapper.getById(id);
         if (null==brand){
-            throw new DbException.DbNotExistException("brandId="+ id);
+            throw new DbException.DbNotExistException("brand.id="+ id);
         }
         BeanUtils.copyProperties(brand, brandDTO);
 
