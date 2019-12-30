@@ -1,24 +1,19 @@
-package com.miao.ashop.goods.dao;
+package com.miao.ashop.goods.service;
 
+
+import com.miao.ashop.goods.common.dto.BrandDTO;
 import com.miao.ashop.goods.common.qto.BrandQTO;
-import com.miao.ashop.goods.domain.Brand;
 
 import java.util.List;
 
-/**
-* BrandMapper
-*
-* @author miao
-* @created 2019-12-07T18:28:17.580
-*/
-public interface BrandMapper {
+public interface BrandService {
 
     /**
-     * 插入品牌
-     * @param brand
+     * 添加品牌
+     * @param brandDTO
      * @return
      */
-    long saveBrand(Brand brand);
+    long addBrand(BrandDTO brandDTO);
 
     /**
      * 删除品牌
@@ -29,24 +24,22 @@ public interface BrandMapper {
 
     /**
      * 更新品牌
-     * @param brand
-     * @return
      */
-    int updateBrand(Brand brand);
+    int updateBrand(BrandDTO brandDTO);
 
     /**
-     * 获取指定品牌
+     * 获取品牌
      * @param id
      * @return
      */
-    Brand getById(Long id);
+    BrandDTO getBrand(Long id);
 
     /**
-     * 品牌列表
+     * 获取品牌列表
      * @param brandQTO
      * @return
      */
-    List<Brand> listBrand(BrandQTO brandQTO);
+    List<BrandDTO> listBrand(BrandQTO brandQTO);
 
     /**
      * 品牌计数
@@ -54,4 +47,5 @@ public interface BrandMapper {
      * @return
      */
     long countBrand(BrandQTO brandQTO);
+
 }

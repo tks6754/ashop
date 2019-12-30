@@ -1,20 +1,16 @@
-package com.miao.ashop.goods.domain;
+package com.miao.ashop.goods.common.dto;
 
-import java.util.Date;
+import lombok.Builder;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
 
-/**
-* Brand
-*
-* @author miao
-* @created 2019-12-07T18:28:17.578
-*/
-@Alias("Brand")
+import java.io.Serializable;
+import java.util.Date;
+
+@Builder
 @Data
-public class Brand {
+public class BrandDTO implements Serializable {
     /**
-     * 
+     *
      */
     private Long id;
 
