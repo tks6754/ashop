@@ -6,6 +6,9 @@ import com.miao.ashop.goods.common.qto.BrandQTO;
 
 import java.util.List;
 
+/**
+ * 品牌服务
+ */
 public interface BrandService {
 
     /**
