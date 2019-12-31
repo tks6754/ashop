@@ -45,6 +45,7 @@ public interface CategoryPropertyMapper {
      * @param categoryId
      * @return
      */
+    // TODO: 2019/12/31 连表groupName
     List<CategoryProperty> listByCategoryId(Long categoryId);
 
 }

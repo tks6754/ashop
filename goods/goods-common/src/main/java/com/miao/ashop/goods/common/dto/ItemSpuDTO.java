@@ -1,19 +1,16 @@
-package com.miao.ashop.goods.domain;
+package com.miao.ashop.goods.common.dto;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import lombok.Data;
 
-/**
-* Item
-*
-* @author miao
-* @created 2019-12-07T18:28:17.582
-*/
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
+
 @Data
-public class Item {
+public class ItemSpuDTO implements Serializable {
     /**
-     * 
+     *
      */
     private Long id;
 
@@ -126,4 +123,30 @@ public class Item {
      * 逻辑删除 0:未删除 1:已删除
      */
     private Integer isDeleted;
+
+
+    List<SpuMediaDTO> spuMediaDTOList;
+
+
+    List<SpuPropertyDTO> spuPropertyDTOList;
+
+
+    /**
+     * sku 属性
+     */
+    List<SkuAttrDTO> skuAttrDTOList;
+
+    /**
+     * sku 列表
+     */
+    List<ItemSkuDTO> itemSkuDTOList;
+
+
+
+
+
+
+
+
+
 }

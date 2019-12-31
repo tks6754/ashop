@@ -16,5 +16,9 @@
   <sql id="base_column_list">
     id, spu_id, attr_key_id, attr_value, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+
+  <insert id="saveSkuAttrVal" parameterType="SkuAttrVal">
+
+  </insert>
 </mapper>

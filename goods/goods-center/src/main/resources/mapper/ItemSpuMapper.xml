@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.miao.ashop.goods.dao.ItemMapper">
-  <resultMap id="BaseResultMap" type="com.miao.ashop.goods.domain.Item">
+<mapper namespace="com.miao.ashop.goods.dao.ItemSpuMapper">
+  <resultMap id="BaseResultMap" type="com.miao.ashop.goods.domain.ItemSpu">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="subtitle" jdbcType="VARCHAR" property="subtitle" />
@@ -30,5 +30,10 @@
   <sql id="base_column_list">
     id, name, subtitle, main_img, main_video, item_code, market_price, cost_price, sale_price, brand_id, brand_name, category_id, category_name, shop_id, item_pattern, item_type, flag, feature, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+  <insert id="saveItemSpu" parameterType="ItemSpu">
+
+  </insert>
+
+
 </mapper>

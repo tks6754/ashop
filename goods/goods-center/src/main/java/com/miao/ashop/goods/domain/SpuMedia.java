@@ -2,6 +2,7 @@ package com.miao.ashop.goods.domain;
 
 import java.util.Date;
 import lombok.Data;
+import org.apache.ibatis.type.Alias;
 
 /**
 * SpuMedia
@@ -9,6 +10,7 @@ import lombok.Data;
 * @author miao
 * @created 2019-12-07T18:28:17.584
 */
+@Alias("SpuMedia")
 @Data
 public class SpuMedia {
     /**

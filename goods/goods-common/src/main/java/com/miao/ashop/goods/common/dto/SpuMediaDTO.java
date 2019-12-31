@@ -1,20 +1,15 @@
-package com.miao.ashop.goods.domain;
+package com.miao.ashop.goods.common.dto;
 
-import java.util.Date;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
 
-/**
-* SkuAttrKey
-*
-* @author miao
-* @created 2019-12-07T18:28:17.583
-*/
-@Alias("SkuAttrKey")
+import java.io.Serializable;
+import java.util.Date;
+
 @Data
-public class SkuAttrKey {
+public class SpuMediaDTO implements Serializable {
+
     /**
-     * 
+     *
      */
     private Long id;
 
@@ -24,9 +19,24 @@ public class SkuAttrKey {
     private Long spuId;
 
     /**
-     * 属性名
+     * 图片链接
      */
-    private String attrName;
+    private String mediaUrl;
+
+    /**
+     * 图片类型 1:图 2:视频
+     */
+    private Integer mediaType;
+
+    /**
+     * 图片类型
+     */
+    private Integer imgType;
+
+    /**
+     * 图片顺序 默认为0不排序，起始排序从1开始
+     */
+    private Integer seqNum;
 
     /**
      * 所属业务平台
@@ -52,4 +62,5 @@ public class SkuAttrKey {
      * 逻辑删除 0:未删除 1:已删除
      */
     private Integer isDeleted;
+
 }

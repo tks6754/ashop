@@ -1,27 +1,22 @@
-package com.miao.ashop.goods.domain;
+package com.miao.ashop.goods.common.dto;
 
-import java.util.Date;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
 
-/**
-* SpuProperty
-*
-* @author miao
-* @created 2019-12-07T18:28:17.584
-*/
-@Alias("SpuProperty")
+import java.io.Serializable;
+import java.util.Date;
+
 @Data
-public class SpuProperty {
+public class CategoryPropertyDTO implements Serializable {
+
     /**
-     * 
+     *
      */
     private Long id;
 
     /**
-     * 商品id
+     * 类目id
      */
-    private Long spuId;
+    private Long categoryId;
 
     /**
      * 属性名
@@ -29,9 +24,14 @@ public class SpuProperty {
     private String propertyName;
 
     /**
-     * 属性值
+     * 属性类型 1:spu-property 2:spu规格 3:sku-property
      */
-    private String propertyValue;
+    private Integer propType;
+
+    /**
+     * prop_type=2时，spu规格的分组
+     */
+    private Long propGroup;
 
     /**
      * 所属业务平台
@@ -57,4 +57,10 @@ public class SpuProperty {
      * 逻辑删除 0:未删除 1:已删除
      */
     private Integer isDeleted;
+
+    /**
+     * 分组名
+     */
+    private String propGroupName;
+
 }
