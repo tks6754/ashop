@@ -125,10 +125,25 @@ public class ItemSpuDTO implements Serializable {
     private Integer isDeleted;
 
 
-    List<SpuMediaDTO> spuMediaDTOList;
+    /**
+     * spu 头部媒体文件
+     */
+    List<SpuMediaDTO> spuHeadMediaDTOList;
 
+    /**
+     * spu 详情媒体文件
+     */
+    List<SpuMediaDTO> spuDetailMediaDTOList;
 
-    List<SpuPropertyDTO> spuPropertyDTOList;
+    /**
+     *
+     */
+    List<SpuPropertyDTO> spuPropertyList;
+
+    /**
+     *
+     */
+    List<SpuPropertyDTO> spuSpecificationList;
 
 
     /**
