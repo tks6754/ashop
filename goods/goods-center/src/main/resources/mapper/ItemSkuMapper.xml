@@ -20,5 +20,9 @@
   <sql id="base_column_list">
     id, sku_name, sku_attr_code, sku_img, qty, market_price, sale_price, cost_price, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+  <insert id="saveAllItemSku">
+
+  </insert>
+
 </mapper>

@@ -1,0 +1,51 @@
+spring:
+  cloud:
+    consul:
+      host: 127.0.0.1
+      discovery:
+        service-name: user-center
+  datasource:
+    druid:
+      url: jdbc:mysql://47.110.247.186:3306/ashop_user?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: $jianFENG163
+      driver-class-name: com.mysql.jdbc.Driver
+      initial-size: 5
+      max-active: 1000
+      min-idle: 10
+      max-wait: 10000
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: 1
+      max-open-prepared-statements: 1
+      validation-query: SELECT 1
+      validation-query-timeout: 10
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: false
+      time-between-connect-error-millis: 10
+      min-evictable-idle-time-millis: 30000
+      max-evictable-idle-time-millis: 35000
+
+
+# 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+# 不要设置过大，如果过大，启动项目会报错：打开文件数过多
+server:
+  port: 8000
+  undertow:
+    io-threads: 16
+    # 阻塞任务线程池, 当执行类似servlet请求阻塞IO操作, undertow会从这个线程池中取得线程
+    # 它的值设置取决于系统线程执行任务的阻塞系数，默认值是IO线程数*8
+    worker-threads: 256
+    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+    # 每块buffer的空间大小,越小的空间被利用越充分，不要设置太大，以免影响其他应用，合适即可
+    buffer-size: 1024
+    # 是否分配的直接内存(NIO直接分配的堆外内存)
+    direct-buffers: true
+
+
+swagger2:
+  enable: true
+
+
+
+

@@ -4,8 +4,9 @@
   <resultMap id="BaseResultMap" type="com.miao.ashop.goods.domain.SpuProperty">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="spu_id" jdbcType="BIGINT" property="spuId" />
-    <result column="property_name" jdbcType="VARCHAR" property="propertyName" />
-    <result column="property_value" jdbcType="VARCHAR" property="propertyValue" />
+    <result column="property_name" jdbcType="VARCHAR" property="propName" />
+    <result column="property_value" jdbcType="VARCHAR" property="propType" />
+    <result column="property_group" jdbcType="VARCHAR" property="propGroup"/>
     <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
     <result column="version" jdbcType="INTEGER" property="version" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
@@ -17,6 +18,11 @@
     id, spu_id, property_name, property_value, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
 
+  <insert id="saveSpuProperty" parameterType="SpuProperty" >
 
+  </insert>
 
+  <insert id="saveAllSpuProperty">
+
+  </insert>
 </mapper>

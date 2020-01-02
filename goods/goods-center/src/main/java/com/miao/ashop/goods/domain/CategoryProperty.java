@@ -2,6 +2,7 @@ package com.miao.ashop.goods.domain;
 
 import java.util.Date;
 import lombok.Data;
+import org.apache.ibatis.type.Alias;
 
 /**
 * CategoryProperty
@@ -9,6 +10,7 @@ import lombok.Data;
 * @author miao
 * @created 2019-12-07T18:28:17.582
 */
+@Alias("CategoryProperty")
 @Data
 public class CategoryProperty {
     /**

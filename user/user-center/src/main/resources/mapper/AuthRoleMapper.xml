@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miao.ashop.user.dao.AuthRoleMapper">
+  <resultMap id="BaseResultMap" type="com.miao.ashop.user.domain.AuthRole">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_desc" jdbcType="VARCHAR" property="roleDesc" />
+    <result column="auth_set" jdbcType="VARCHAR" property="authSet" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  
+  <sql id="base_column_list">
+    id, role_name, role_desc, auth_set, biz_type, version, gmt_create, gmt_modified, is_deleted
+  </sql>
+
+  <insert id="saveRole">
+
+  </insert>
+
+  <update id="deleteRole" parameterType="long">
+
+  </update>
+
+  <select id="getById" parameterType="long" resultMap="BaseResultMap">
+
+  </select>
+
+  <select id="listAllRole" resultMap="BaseResultMap">
+
+  </select>
+  
+</mapper>

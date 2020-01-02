@@ -3,6 +3,7 @@ package com.miao.ashop.goods.domain;
 import java.math.BigDecimal;
 import java.util.Date;
 import lombok.Data;
+import org.apache.ibatis.type.Alias;
 
 /**
 * Item
@@ -10,8 +11,9 @@ import lombok.Data;
 * @author miao
 * @created 2019-12-07T18:28:17.582
 */
+@Alias("ItemSpu")
 @Data
-public class Item {
+public class ItemSpu {
     /**
      * 
      */

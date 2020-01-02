@@ -15,5 +15,30 @@
   <sql id="base_column_list">
     id, brand_name, picture_url, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+  <insert id="saveBrand">
+
+  </insert>
+
+
+  <update id="deleteBrand" parameterType="long">
+
+  </update>
+
+  <update id="updateBrand" parameterType="Brand">
+
+  </update>
+
+  <select id="getById" parameterType="long" resultMap="BaseResultMap">
+
+  </select>
+
+  <select id="listBrand" parameterType="com.miao.ashop.goods.common.qto.BrandQTO" resultMap="BaseResultMap">
+
+  </select>
+
+  <select id="countBrand" parameterType="com.miao.ashop.goods.common.qto.BrandQTO" resultType="long">
+
+  </select>
+
 </mapper>

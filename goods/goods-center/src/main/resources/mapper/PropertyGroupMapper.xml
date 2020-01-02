@@ -14,5 +14,20 @@
   <sql id="base_column_list">
     id, prop_group_name, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+  <insert id="savePropertyGroup">
+
+  </insert>
+
+  <update id="deleteById" parameterType="long">
+
+  </update>
+
+  <update id="updatePropertyGroup">
+
+  </update>
+
+  <select id="getById" parameterType="long" resultMap="BaseResultMap">
+
+  </select>
 </mapper>

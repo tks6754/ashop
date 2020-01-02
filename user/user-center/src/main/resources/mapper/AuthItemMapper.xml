@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miao.ashop.user.dao.AuthItemMapper">
+  <resultMap id="BaseResultMap" type="com.miao.ashop.user.domain.AuthItem">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="menu_id" jdbcType="BIGINT" property="menuId" />
+    <result column="req_url" jdbcType="VARCHAR" property="reqUrl" />
+    <result column="req_method" jdbcType="VARCHAR" property="reqMethod" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  
+  <sql id="base_column_list">
+    id, menu_id, req_url, req_method, biz_type, version, gmt_create, gmt_modified, is_deleted
+  </sql>
+
+  <insert id="saveAuthItem" parameterType="AuthItem">
+
+  </insert>
+
+  <update id="deleteAuthItem" parameterType="long">
+
+  </update>
+
+  <update id="deleteByMenu" parameterType="long">
+
+  </update>
+
+  <update id="updateById" parameterType="long">
+
+  </update>
+
+  <select id="listByMenu" resultMap="BaseResultMap">
+
+  </select>
+</mapper>

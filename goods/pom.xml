@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>goods-center</module>
+        <module>goods-common</module>
+        <module>goods-api</module>
     </modules>
 
 

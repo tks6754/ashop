@@ -1,7 +1,10 @@
 package com.miao.ashop.goods.domain;
 
 import java.util.Date;
+
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
 * PropertyGroup
@@ -10,6 +13,8 @@ import lombok.Data;
 * @created 2019-12-07T18:28:17.583
 */
 @Data
+@NoArgsConstructor
+@Builder
 public class PropertyGroup {
     /**
      * 
@@ -17,7 +22,7 @@ public class PropertyGroup {
     private Long id;
 
     /**
-     * 属性名
+     * 属性组名
      */
     private String propGroupName;
 

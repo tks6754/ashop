@@ -7,7 +7,7 @@ package com.miao.ashop.common.exception;
 public enum ErrorEnum {
 
     /*数据库记录异常*/
-    DB_NOT_EXIST("DB5101", "记录不存在"),
+    DB_NOT_EXIST("DB5101", " 记录不存在"),
 
 
     /*Quartz异常*/

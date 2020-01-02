@@ -18,5 +18,12 @@
   <sql id="base_column_list">
     id, spu_id, media_url, media_type, img_type, seq_num, biz_type, version, gmt_create, gmt_modified, is_deleted
   </sql>
-  
+
+  <insert id="saveSpuMedia" parameterType="SpuMedia">
+
+  </insert>
+
+  <insert id="saveAllSpuMedia">
+
+  </insert>
 </mapper>
