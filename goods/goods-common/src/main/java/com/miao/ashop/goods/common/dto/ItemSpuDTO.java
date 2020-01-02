@@ -136,12 +136,12 @@ public class ItemSpuDTO implements Serializable {
     List<SpuMediaDTO> spuDetailMediaDTOList;
 
     /**
-     *
+     * spu 属性
      */
     List<SpuPropertyDTO> spuPropertyList;
 
     /**
-     *
+     * spu 规格
      */
     List<SpuPropertyDTO> spuSpecificationList;
 
@@ -155,13 +155,6 @@ public class ItemSpuDTO implements Serializable {
      * sku 列表
      */
     List<ItemSkuDTO> itemSkuDTOList;
-
-
-
-
-
-
-
 
 
 }

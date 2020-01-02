@@ -2,6 +2,8 @@ package com.miao.ashop.goods.dao;
 
 import com.miao.ashop.goods.domain.SpuProperty;
 
+import java.util.List;
+
 /**
 * SpuPropertyMapper
 *
@@ -16,5 +18,7 @@ public interface SpuPropertyMapper {
      * @return
      */
     long saveSpuProperty(SpuProperty spuProperty);
+
+    int saveAllSpuProperty(List<SpuProperty> spuPropertyList);
 
 }

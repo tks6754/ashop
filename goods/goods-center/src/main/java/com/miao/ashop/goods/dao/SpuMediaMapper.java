@@ -2,6 +2,8 @@ package com.miao.ashop.goods.dao;
 
 import com.miao.ashop.goods.domain.SpuMedia;
 
+import java.util.List;
+
 /**
 * SpuMediaMapper
 *
@@ -16,4 +18,11 @@ public interface SpuMediaMapper {
      * @return
      */
     long saveSpuMedia(SpuMedia spuMedia);
+
+    /**
+     *
+     * @param spuMediaList
+     * @return
+     */
+    int saveAllSpuMedia(List<SpuMedia> spuMediaList);
 }

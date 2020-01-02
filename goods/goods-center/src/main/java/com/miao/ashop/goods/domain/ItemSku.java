@@ -28,6 +28,11 @@ public class ItemSku {
     private String skuAttrCode;
 
     /**
+     * spu.id
+     */
+    private Long spuId;
+
+    /**
      * sku图
      */
     private String skuImg;

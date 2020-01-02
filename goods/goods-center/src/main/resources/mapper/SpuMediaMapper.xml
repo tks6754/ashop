@@ -23,4 +23,7 @@
 
   </insert>
 
+  <insert id="saveAllSpuMedia">
+
+  </insert>
 </mapper>
