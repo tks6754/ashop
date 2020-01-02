@@ -24,6 +24,5 @@
 
   <insert id="saveAllSpuProperty">
 
-
   </insert>
 </mapper>
